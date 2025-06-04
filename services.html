@@ -27,27 +27,22 @@
             overflow-x: hidden;
         }
 
-            body::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(28, 37, 38, 0.3));
-                opacity: 0.3;
-                animation: waterWave 10s infinite linear;
-                z-index: -1;
-            }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(28, 37, 38, 0.3));
+            opacity: 0.3;
+            animation: waterWave 10s infinite linear;
+            z-index: -1;
+        }
 
         @keyframes waterWave {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 200% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
 
         .navbar {
@@ -66,35 +61,40 @@
             transition: color 0.3s ease;
         }
 
-            .nav-link:hover {
-                color: #E0E0E0 !important;
-                text-shadow: 0 0 10px #D4AF37;
-            }
+        .nav-link:hover {
+            color: #E0E0E0 !important;
+            text-shadow: 0 0 10px #D4AF37;
+        }
 
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .services-section {
             padding: 3rem 1rem;
         }
 
-            .services-section h1 {
-                font-family: 'Planet Kosmos', sans-serif;
-                color: #D4AF37;
-                font-size: clamp(1.8rem, 4vw, 3rem);
-                margin-bottom: 1rem;
-                text-align: center;
-                text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            }
+        .services-section h1 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
 
-            .services-section p {
-                font-size: clamp(0.9rem, 2vw, 1.2rem);
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto 2rem;
-            }
+        .services-section p {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
 
         .service-card {
             background: rgba(255, 255, 255, 0.05);
@@ -106,28 +106,28 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-            .service-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
 
-            .service-card h3 {
-                font-family: 'Planet Kosmos', sans-serif;
-                color: #D4AF37;
-                font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-                margin-bottom: 0.5rem;
-            }
+        .service-card h3 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 0.5rem;
+        }
 
-            .service-card p {
-                font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-                margin-bottom: 0.5rem;
-            }
+        .service-card p {
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            margin-bottom: 0.5rem;
+        }
 
-            .service-card .price {
-                font-size: clamp(1rem, 2vw, 1.2rem);
-                color: #FFFFFF;
-                font-weight: 700;
-            }
+        .service-card .price {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #FFFFFF;
+            font-weight: 700;
+        }
 
         .btn-primary {
             background-color: #D4AF37;
@@ -140,11 +140,11 @@
             display: block;
         }
 
-            .btn-primary:hover {
-                background-color: #E0E0E0;
-                box-shadow: 0 0 15px #D4AF37;
-                transform: scale(1.05);
-            }
+        .btn-primary:hover {
+            background-color: #E0E0E0;
+            box-shadow: 0 0 15px #D4AF37;
+            transform: scale(1.05);
+        }
 
         .hidden-services {
             display: none;
@@ -152,74 +152,229 @@
             transition: opacity 0.5s ease;
         }
 
-            .hidden-services.show {
-                display: flex;
-                opacity: 1;
+        .hidden-services.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .advantages-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(28, 37, 38, 0.6);
+            border-radius: 15px;
+            border: 1px solid #D4AF37;
+        }
+
+        .advantages-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .advantages-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .advantage-item {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .advantage-item h3 {
+            font-size: 1.1rem;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-item p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin: 0;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: #E0E0E0;
+            padding: 2rem 0;
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #E0E0E0;
+            margin: 0.3rem 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-socials,
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-socials li,
+        .footer-nav li {
+            margin: 0.3rem 0;
+        }
+
+        .footer-copy {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .promo-banner {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #D4AF37;
+            color: #000;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            max-width: 240px;
+            z-index: 3000;
+            animation: pulse 2.5s infinite;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .promo-banner.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .promo-banner p {
+            margin: 0 0 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .promo-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .promo-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .promo-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .promo-close:hover {
+            color: #fff;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: #D4AF37;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            z-index: 2500;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #E0E0E0;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
             }
 
-        /* Добавленные стили для скидки */
-        .discount-banner {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #d4af37;
-            color: #000;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
+            .promo-banner {
+                max-width: 180px;
+                bottom: 10px;
+                right: 10px;
+            }
 
-        .discount-content h3 {
-            margin: 0 0 5px 0;
-            font-size: 18px;
-        }
-
-        .discount-content p {
-            margin: 0 0 10px 0;
-            font-size: 14px;
-        }
-
-        .discount-content button {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
+            .back-to-top {
+                bottom: 80px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1rem 0;
-            text-align: center;
-            font-size: clamp(0.8rem, 1.5vw, 1rem);
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -245,7 +400,10 @@
                         <a class="nav-link" href="contact.html">Контакты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="social.html">Соцсети</a>
+                        <a class="nav-link" href="social.html">Соцсети</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sitemap.html" class="nav-link" style="color: #d4a373; text-decoration: none;">Карта сайта</a>
                     </li>
                 </ul>
             </div>
@@ -308,23 +466,73 @@
             </div>
         </div>
         <button id="showMoreBtn" class="btn btn-primary">Показать больше</button>
+
+        <div class="advantages-section fade-in">
+            <h2>Почему мы?</h2>
+            <ul class="advantages-list">
+                <li class="advantage-item">
+                    <h3>Качество материалов</h3>
+                    <p>Используем только профессиональные продукты для ваших волос.</p>
+                </li>
+                <li class="advantage-item">
+                    <h3>Опыт мастеров</h3>
+                    <p>Наши специалисты обладают более чем 10-летним опытом.</p>
+                </li>
+                <li class="advantage-item">
+                    <h3>Индивидуальность</h3>
+                    <p>Подбираем стиль, идеально подходящий именно вам.</p>
+                </li>
+            </ul>
+            <p class="fade-in" style="margin-top: 1.5rem;">В Barbershop37 мы стремимся к тому, чтобы каждый клиент чувствовал себя особенным. Наша философия — сочетание классического мастерства и современных трендов для создания вашего уникального образа.</p>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 Barbershop37. Все права защищены.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Barbershop37</h3>
+                    <p>ул. Мневники, 21, Москва<br>
+                    <a href="tel:+79932588075">+7 (993) 258-80-75</a><br>
+                    <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a><br>
+                    Пн-Вс, 10:00–21:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Соцсети</h3>
+                    <ul class="footer-socials">
+                        <li><a href="https://t.me/en3m7">Telegram</a></li>
+                        <li><a href="https://vk.com/kolyawab">ВКонтакте</a></li>
+                        <li><a href="ig.html">Instagram</a></li>
+                        <li><a href="https://wa.me/78120370105">WhatsApp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="social.html">Соцсети</a></li>
+                        <li><a href="sitemap.html">Карта сайта</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
+        </div>
     </footer>
 
-    <!-- Добавленное окно скидки -->
-    <div class="discount-banner">
-        <div class="discount-content">
-            <h3>Акция!</h3>
-            <p>Скидка 10% при записи онлайн</p>
-            <button onclick="location.href='contact.html'">Записаться</button>
-        </div>
+    <div class="promo-banner" id="promoBanner">
+        <button class="promo-close">×</button>
+        <p>Скидка 10% на первую онлайн-запись!</p>
+        <a href="contact.html" class="promo-btn">Записаться</a>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+        ↑
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
     <script>
         // Показать/скрыть дополнительные услуги
         const showMoreBtn = document.getElementById('showMoreBtn');
@@ -342,6 +550,34 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Закрытие баннера
+        document.addEventListener('DOMContentLoaded', () => {
+            const promoBanner = document.getElementById('promoBanner');
+            if (promoBanner) {
+                const promoClose = promoBanner.querySelector('.promo-close');
+                promoClose.addEventListener('click', () => {
+                    promoBanner.classList.add('hidden');
+                });
+            }
+        });
+
+        // Показ кнопки "вверх"
+        const backToTop = document.getElementById('backToTop');
+        const footer = document.querySelector('footer');
+
+        window.addEventListener('scroll', () => {
+            const footerTop = footer.getBoundingClientRect().top;
+            if (footerTop <= window.innerHeight) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>

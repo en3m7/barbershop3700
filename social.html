@@ -43,10 +43,7 @@
             transition: color 0.3s ease;
         }
 
-        .social-section {
-            padding: 3rem 1rem;
-            flex: 1;
-        }
+        
 
         .social-card {
             background: rgba(255, 255, 255, 0.05);
@@ -68,35 +65,185 @@
             margin-bottom: 1rem;
         }
 
-        .telegram { color: #0088cc; }
-        .vk { color: #4a76a8; }
-        .instagram { color: #e1306c; }
-        .whatsapp { color: #25D366; }
+                    .back-to-top {
+        position: fixed;
+        bottom: 120px;
+        left: 30px;
+        background: #D4AF37;
+        color: #000;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+        z-index: 2500;
+    }
 
-        .social-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #D4AF37;
-            color: #1C2526;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        .social-link:hover {
-            background-color: #E0E0E0;
-            transform: scale(1.05);
-        }
+    .back-to-top:hover {
+        background: #E0E0E0;
+    }
 
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1rem 0;
-            text-align: center;
+    @media (max-width: 768px) {
+        .back-to-top {
+            bottom: 100px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
         }
+    }
+
+                    .footer {
+                background: rgba(0, 0, 0, 0.9);
+                color: #E0E0E0;
+                padding: 2rem 0;
+                font-size: clamp(0.85rem, 1.5vw, 1rem);
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+
+            .footer-section h3 {
+                font-family: 'Planet Kosmos', sans-serif;
+                color: #D4AF37;
+                font-size: 1.2rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                color: #E0E0E0;
+                margin: 0.3rem 0;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section a:hover {
+                color: #D4AF37;
+            }
+
+            .footer-socials,
+            .footer-nav {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-socials li,
+            .footer-nav li {
+                margin: 0.3rem 0;
+            }
+
+            .footer-copy {
+                text-align: center;
+                margin-top: 1.5rem;
+                color: #b0b0b0;
+                font-size: 0.9rem;
+            }
+
+                .promo-banner {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #D4AF37;
+        color: #000;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+        max-width: 240px;
+        z-index: 2000;
+        animation: pulse 2.5s infinite;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .promo-banner.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .promo-banner p {
+        margin: 0 0 0.75rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    .promo-btn {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .promo-btn:hover {
+        background: #333;
+        transform: scale(1.05);
+    }
+
+    .promo-close {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: none;
+        border: none;
+        color: #000;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .promo-close:hover {
+        color: #fff;
+    }
+
+            @media (max-width: 768px) {
+                .footer-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .promo-banner {
+                    max-width: 180px;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            }
+
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.03); }
+                100% { transform: scale(1); }
+            }
     </style>
 </head>
+<xaiArtifact artifact_id="e5ef07a2-4845-4b12-85f0-8ae30e1077be" artifact_version_id="0d42c644-9dcd-43ec-9635-078312888348" title="New HTML Footer" contentType="text/html"></xaiArtifact>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -120,6 +267,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="social.html">Соцсети</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sitemap.html" class="nav-link" style="color: #d4a373; text-decoration: none;">Карта сайта</a>
                     </li>
                 </ul>
             </div>
@@ -183,10 +333,77 @@
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Barbershop37. Все права защищены.</p>
-    </footer>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Barbershop37</h3>
+                <p>Профессиональные стрижки и уход за внешностью с акцентом на качество и стиль.<br>
+                ул. Мневники, 21, Москва<br>
+                <a href="tel:+79932588075">+7 (993) 258-80-75</a><br>
+                <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a><br>
+                Пн-Вс, 10:00–21:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Соцсети</h3>
+                <ul class="footer-socials">
+                    <li><a href="https://t.me/en3m7">Telegram</a></li>
+                    <li><a href="https://vk.com/kolyawab">ВКонтакте</a></li>
+                    <li><a href="ig.html">Instagram</a></li>
+                    <li><a href="https://wa.me/78120370105">WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Навигация</h3>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="social.html">Соцсети</a></li>
+                    <li><a href="sitemap.html">Карта сайта</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
+    </div>
+</footer>
+
+<!-- Новый баннер (добавлять только на contact.html) -->
+<div class="promo-banner" id="promoBanner">
+    <button class="promo-close">&times;</button>
+    <p>Скидка 10% на первую онлайн-запись!</p>
+    <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
+</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const promoBanner = document.getElementById('promoBanner');
+    if (promoBanner) {
+        const promoClose = promoBanner.querySelector('.promo-close');
+        promoClose.addEventListener('click', () => {
+            promoBanner.classList.add('hidden');
+        });
+    }
+});
+    const backToTop = document.getElementById('backToTop');
+        const footer = document.querySelector('footer');
+
+        window.addEventListener('scroll', () => {
+            const footerPosition = footer.getBoundingClientRect().top;
+            if (footerPosition <= window.innerHeight) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <div class="back-to-top" id="backToTop">↑</div>
 </body>
 </html>
