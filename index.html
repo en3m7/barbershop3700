@@ -3,49 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="Добро пожаловать в Barbershop37 — профессиональные стрижки и уход в Москве. Запишитесь онлайн и получите скидку 10%!">
+    <meta name="keywords" content="барбершоп, стрижки, Москва, уход за бородой">
     <title>Barbershop37</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-            .back-to-top {
-            position: fixed;
-            bottom: 120px;
-            left: 30px;
-            background: #D4AF37;
-            color: #000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-            z-index: 2500;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #E0E0E0;
-        }
-
-        @media (max-width: 768px) {
-            .back-to-top {
-                bottom: 100px;
-                left: 10px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-        }
         @font-face {
             font-family: 'Planet Kosmos';
             src: url('fonts/PlanetKosmos.ttf') format('truetype');
@@ -108,6 +72,11 @@
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-section {
@@ -203,6 +172,15 @@
             background: rgba(0, 0, 0, 0.4);
         }
 
+        .masters-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
         .master-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #D4AF37;
@@ -250,6 +228,15 @@
             padding: 3rem 1rem;
         }
 
+        .pricing-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
         .pricing-table {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #D4AF37;
@@ -281,48 +268,18 @@
             font-weight: bold;
         }
 
-            .back-to-top {
-        position: fixed;
-        bottom: 120px;
-        left: 30px;
-        background: #D4AF37;
-        color: #000;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-        z-index: 2500;
-    }
-
-    .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .back-to-top:hover {
-        background: #E0E0E0;
-    }
-
-    @media (max-width: 768px) {
-        .back-to-top {
-            bottom: 100px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            font-size: 1.2rem;
-        }
-    }
-
         .reviews-section {
             padding: 3rem 1rem;
             background: rgba(0, 0, 0, 0.4);
+        }
+
+        .reviews-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         .review-card {
@@ -387,21 +344,6 @@
             color: #E0E0E0;
             flex-grow: 1;
         }
-
-
-        .special-offer {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));
-            padding: 0.75rem;
-            max-width: 200px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            animation: bounce 2s infinite;
-        }
-
-        
 
         .why-choose-us {
             padding: 3rem 1rem;
@@ -470,66 +412,129 @@
             border: 0;
         }
 
-            .glow-divider {
-        position: relative;
-        height: 4px;
-        background: #D4AF37;
-        margin: 2rem 0;
-        border-radius: 2px;
-        overflow: hidden;
-    }
+        .glow-divider {
+            position: relative;
+            height: 4px;
+            background: #D4AF37;
+            margin: 2rem 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
 
-    .glow-divider::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
-        animation: glowPulse 3s infinite linear;
-    }
+        .glow-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            animation: glowPulse 3s infinite linear;
+        }
 
-    @keyframes glowPulse {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200%); }
-    }
-
-
-        
+        @keyframes glowPulse {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(200%); }
+        }
 
         .back-to-top {
-            display: none;
             position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background: #FFD700;
+            bottom: 120px;
+            left: 30px;
+            background: #D4AF37;
+            color: #000;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            justify-content: center;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+            z-index: 2500;
         }
 
         .back-to-top.show {
-            display: flex;
+            opacity: 1;
+            visibility: visible;
         }
 
         .back-to-top:hover {
-            transform: scale(1.1);
+            background: #E0E0E0;
         }
 
-        .back-to-top::after {
-            content: '↑';
-            color: #1C2526;
-            font-size: 1.5rem;
-            font-weight: bold;
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 100px;
+                left: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .carousel-item img {
+                height: 40vh;
+            }
+
+            .carousel-inner, .carousel-section {
+                max-height: 40vh;
+            }
+
+            .review-card {
+                min-height: 300px;
+            }
+
+            .map-container iframe {
+                height: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
-                .footer {
+        @media (max-width: 576px) {
+            .carousel-item img {
+                height: 30vh;
+            }
+
+            .carousel-inner, .carousel-section {
+                max-height: 30vh;
+            }
+
+            .review-card {
+                min-height: 350px;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            body {
+                background: #000;
+                color: #FFF;
+            }
+
+            .btn-primary {
+                background: #FFF;
+                color: #000;
+            }
+
+            .master-card, .review-card, .feature-card, .pricing-table {
+                background: #222;
+                border-color: #FFF;
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
             background: rgba(0, 0, 0, 0.9);
             color: #E0E0E0;
             padding: 2rem 0;
@@ -584,204 +589,164 @@
             font-size: 0.9rem;
         }
 
+        .footer-clock {
+            text-align: center;
+            margin-top: 1rem;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
 
-    .promo-banner {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #D4AF37;
-        color: #000;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-        max-width: 240px;
-        z-index: 2000;
-        animation: pulse 2.5s infinite;
-        text-align: center;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
+        .footer-counter {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
 
-    .promo-banner.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
+        .promo-banner {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #D4AF37;
+            color: #000;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            max-width: 240px;
+            z-index: 2000;
+            animation: pulse 2.5s infinite;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
 
-    .promo-banner p {
-        margin: 0 0 0.75rem;
-        font-size: 0.95rem;
-        font-weight: 500;
-        line-height: 1.4;
-    }
+        .promo-banner.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-    .promo-btn {
-        display: inline-block;
-        background: #000;
-        color: #fff;
-        text-decoration: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 6px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
+        .promo-banner p {
+            margin: 0 0 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
 
-    .promo-btn:hover {
-        background: #333;
-        transform: scale(1.05);
-    }
+        .promo-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
 
-    .promo-close {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: none;
-        border: none;
-        color: #000;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
+        .promo-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
 
-    .promo-close:hover {
-        color: #fff;
-    }
+        .promo-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .promo-close:hover {
+            color: #fff;
+        }
 
         @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
             .promo-banner {
                 max-width: 180px;
                 bottom: 10px;
                 right: 10px;
             }
         }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-}
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .carousel-item img {
-                height: 40vh;
-            }
-            .carousel-inner, .carousel-section {
-                max-height: 40vh;
-            }
-            .review-card {
-                min-height: 300px;
-            }
-            .map-container iframe {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .carousel-item img {
-                height: 30vh;
-            }
-            .carousel-inner, .carousel-section {
-                max-height: 30vh;
-            }
-            .review-card {
-                min-height: 350px;
-            }
-        }
     </style>
-
 </head>
-<xaiArtifact artifact_id="e5ef07a2-4845-4b12-85f0-8ae30e1077be" artifact_version_id="0d42c644-9dcd-43ec-9635-078312888348" title="New HTML Footer" contentType="text/html">
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Barbershop37</a>
+            <a class="navbar-brand" href="index.html" aria-label="Главная страница Barbershop37">Barbershop37</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Главная</a>
+                        <a class="nav-link active" href="index.html" aria-label="Главная">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Услуги</a>
+                        <a class="nav-link" href="services.html" aria-label="Услуги">Услуги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">О нас</a>
+                        <a class="nav-link" href="about.html" aria-label="О нас">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Контакты</a>
+                        <a class="nav-link" href="contact.html" aria-label="Контакты">Контакты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="social.html">Соцсети</a>
+                        <a class="nav-link" href="social.html" aria-label="Соцсети">Соцсети</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sitemap.html">Карта сайта</a>
+                        <a class="nav-link" href="sitemap.html" aria-label="Карта сайта">Карта сайта</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section" role="banner">
         <h1 class="fade-in">Добро пожаловать в Barbershop37</h1>
         <p class="fade-in">Мы создаем стильные образы для настоящих мужчин, сочетая качество, традиции и современные техники. Наши мастера помогут вам подчеркнуть индивидуальность и почувствовать себя на высоте.</p>
-        <a href="contact.html" class="btn btn-primary fade-in">Записаться</a>
+        <a href="contact.html" class="btn btn-primary fade-in" aria-label="Записаться онлайн">Записаться</a>
     </section>
 
-    <section class="carousel-section">
+    <section class="carousel-section" role="region" aria-label="Галерея изображений">
         <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="pics/gallery1.jpg" class="d-block" alt="Галерея 1">
+                    <img src="pics/gallery1.jpg" class="d-block" alt="Галерея 1 - Интерьер барбершопа">
                 </div>
                 <div class="carousel-item">
-                    <img src="pics/gallery2.jpg" class="d-block" alt="Галерея 2">
+                    <img src="pics/gallery2.jpg" class="d-block" alt="Галерея 2 - Процесс стрижки">
                 </div>
                 <div class="carousel-item">
-                    <img src="pics/gallery3.jpg" class="d-block" alt="Галерея 3">
+                    <img src="pics/gallery3.jpg" class="d-block" alt="Галерея 3 - Уход за бородой">
                 </div>
                 <div class="carousel-item">
-                    <img src="pics/gallery4.jpg" class="d-block" alt="Галерея 4">
+                    <img src="pics/gallery4.jpg" class="d-block" alt="Галерея 4 - Клиент с новой стрижкой">
                 </div>
                 <div class="carousel-item">
-                    <img src="pics/gallery5.jpg" class="d-block" alt="Галерея 5">
+                    <img src="pics/gallery5.jpg" class="d-block" alt="Галерея 5 - Команда мастеров">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Предыдущее</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Следующее</span>
             </button>
         </div>
-        <button class="btn btn-primary gallery-button" data-bs-toggle="modal" data-bs-target="#fullScreenGallery">Открыть галерею</button>
+        <button class="btn btn-primary gallery-button" data-bs-toggle="modal" data-bs-target="#fullScreenGallery" aria-label="Открыть полную галерею">Открыть галерею</button>
     </section>
 
-    <section class="masters-section">
-        <h2 class="text-center fade-in" style="font-family: 'Planet Kosmos', sans-serif; color: #D4AF37; margin-bottom: 2rem;">Наши лучшие мастера</h2>
+    <section class="masters-section" role="region" aria-label="Наши мастера">
+        <h2 class="fade-in">Наши лучшие мастера</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -827,8 +792,8 @@
         </div>
     </section>
 
-    <section class="pricing-section">
-        <h2 class="text-center fade-in" style="font-family: 'Planet Kosmos', sans-serif; color: #D4AF37; margin-bottom: 2rem;">Наши цены</h2>
+    <section class="pricing-section" role="region" aria-label="Наши цены">
+        <h2 class="fade-in">Наши цены</h2>
         <div class="container">
             <div class="table-responsive fade-in">
                 <table class="table pricing-table">
@@ -846,24 +811,29 @@
                             <td class="price-value">1500 ₽</td>
                         </tr>
                         <tr>
+                            <td>Стрижка + укладка</td>
+                            <td>Стрижка и профессиональная укладка</td>
+                            <td class="price-value">2000 ₽</td>
+                        </tr>
+                        <tr>
                             <td>Детская стрижка</td>
                             <td>Для мальчиков до 12 лет</td>
-                            <td class="price-value">1200 ₽</td>
-                        </tr>
-                        <tr>
-                            <td>Бритье головы</td>
-                            <td>С использованием профессиональных средств</td>
-                            <td class="price-value">1000 ₽</td>
-                        </tr>
-                        <tr>
-                            <td>Оформление бороды</td>
-                            <td>Стрижка и укладка бороды</td>
                             <td class="price-value">800 ₽</td>
                         </tr>
                         <tr>
-                            <td>Комплекс "Премиум"</td>
-                            <td>Стрижка + бритье + уход за бородой</td>
-                            <td class="price-value">3000 ₽</td>
+                            <td>Бритье бороды</td>
+                            <td>Точное бритье и оформление бороды</td>
+                            <td class="price-value">1000 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Уход за волосами</td>
+                            <td>Профессиональный уход для здоровья волос</td>
+                            <td class="price-value">1200 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Окрашивание</td>
+                            <td>Стильное окрашивание для смелых образов</td>
+                            <td class="price-value">2500 ₽</td>
                         </tr>
                     </tbody>
                 </table>
@@ -871,8 +841,8 @@
         </div>
     </section>
 
-    <section class="reviews-section">
-        <h2 class="text-center fade-in" style="font-family: 'Planet Kosmos', sans-serif; color: #D4AF37; margin-bottom: 2rem;">Отзывы клиентов</h2>
+    <section class="reviews-section" role="region" aria-label="Отзывы клиентов">
+        <h2 class="fade-in">Отзывы клиентов</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -938,7 +908,7 @@
 
     <div class="glow-divider"></div>
 
-    <section class="why-choose-us">
+    <section class="why-choose-us" role="region" aria-label="Почему выбирают нас">
         <h2 class="fade-in">Почему выбирают нас</h2>
         <div class="container">
             <div class="row">
@@ -957,7 +927,7 @@
                 <div class="col-md-4">
                     <div class="feature-card fade-in">
                         <h4>Уютная атмосфера</h4>
-                        <p>У нас вы почувствуете себя как дома — расслабьтесь и доверьтесь профессионалам.</p>
+                        <p>У нас вы почувствуете себя как дома — расслабьтесь и доверьтесь профессионалам. <a href="about.html" aria-label="Узнать больше о нас">Подробнее</a></p>
                     </div>
                 </div>
             </div>
@@ -966,7 +936,7 @@
 
     <div class="glow-divider"></div>
 
-    <section class="map-section">
+    <section class="map-section" role="region" aria-label="Где нас найти">
         <h2 class="fade-in">Где нас найти</h2>
         <div class="map-container fade-in">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2244.1301263362484!2d37.4813281!3d55.7736118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5491a5ac36959%3A0x7ad5aa871203b912!2z0YPQuy4g0JzQvdGR0LLQvdC40LrQuCwgMjEsINCc0L7RgdC60LLQsCwgMTIzNDIz!5e0!3m2!1sru!2sru!4v1748240946040!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -984,35 +954,36 @@
                     <div id="fullScreenCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="pics/gallery1.jpg" class="d-block" alt="Галерея 1">
+                                <img src="pics/gallery1.jpg" class="d-block" alt="Галерея 1 - Интерьер барбершопа">
                             </div>
                             <div class="carousel-item">
-                                <img src="pics/gallery2.jpg" class="d-block" alt="Галерея 2">
+                                <img src="pics/gallery2.jpg" class="d-block" alt="Галерея 2 - Процесс стрижки">
                             </div>
                             <div class="carousel-item">
-                                <img src="pics/gallery3.jpg" class="d-block" alt="Галерея 3">
+                                <img src="pics/gallery3.jpg" class="d-block" alt="Галерея 3 - Уход за бородой">
                             </div>
                             <div class="carousel-item">
-                                <img src="pics/gallery4.jpg" class="d-block" alt="Галерея 4">
+                                <img src="pics/gallery4.jpg" class="d-block" alt="Галерея 4 - Клиент с новой стрижкой">
                             </div>
                             <div class="carousel-item">
-                                <img src="pics/gallery5.jpg" class="d-block" alt="Галерея 5">
+                                <img src="pics/gallery5.jpg" class="d-block" alt="Галерея 5 - Команда мастеров">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#fullScreenCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">Предыдущее</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#fullScreenCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">Следующее</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1044,14 +1015,20 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-clock" id="clock"></div>
+            <div class="footer-counter" id="visitorCounter">Посетителей: 0</div>
             <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
         </div>
     </footer>
 
     <div class="promo-banner" id="promoBanner">
-    <button class="promo-close">&times;</button>
-    <p>Скидка 10% на первую онлайн-запись!</p>
-    <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
+        <button class="promo-close" aria-label="Закрыть баннер">×</button>
+        <p>Скидка 10% на первую онлайн-запись!</p>
+        <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
+    </div>
+
+    <div class="back-to-top" id="backToTop" aria-label="Вернуться вверх">
+        ↑
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -1085,22 +1062,19 @@
         };
         window.addEventListener('scroll', fadeInOnScroll);
         window.addEventListener('load', fadeInOnScroll);
-    </script>
 
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
-    const promoBanner = document.getElementById('promoBanner');
-    if (promoBanner) {
-        const promoClose = promoBanner.querySelector('.promo-close');
-        promoClose.addEventListener('click', () => {
-            promoBanner.classList.add('hidden');
+            const promoBanner = document.getElementById('promoBanner');
+            if (promoBanner) {
+                const promoClose = promoBanner.querySelector('.promo-close');
+                promoClose.addEventListener('click', () => {
+                    promoBanner.classList.add('hidden');
+                });
+            }
         });
-    }
-});
 
-    const backToTop = document.getElementById('backToTop');
+        const backToTop = document.getElementById('backToTop');
         const footer = document.querySelector('footer');
-
         window.addEventListener('scroll', () => {
             const footerPosition = footer.getBoundingClientRect().top;
             if (footerPosition <= window.innerHeight) {
@@ -1109,11 +1083,26 @@
                 backToTop.classList.remove('show');
             }
         });
-
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Часы
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Счетчик посетителей
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCounter').textContent = `Посетителей: ${visitorCount}`;
     </script>
-    <div class="back-to-top" id="backToTop">↑</div>
 </body>
 </html>

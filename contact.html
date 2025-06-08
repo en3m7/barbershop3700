@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="Контакты Barbershop37 в Москве: адрес, телефон, онлайн-запись. Свяжитесь с нами и запишитесь на стрижку!">
+    <meta name="keywords" content="барбершоп, контакты, онлайн-запись, Москва">
     <title>Контакты - Barbershop37</title>
-    <!-- Подключаем Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Подключаем шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Подключаем Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         @font-face {
@@ -121,7 +120,6 @@
             margin: 0.5rem 0;
             display: block;
         }
-
 
         #map {
             width: 400px;
@@ -400,6 +398,20 @@
             font-size: 0.9rem;
         }
 
+        .footer-clock {
+            text-align: center;
+            margin-top: 1rem;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+
+        .footer-counter {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
         .promo-banner {
             position: fixed;
             bottom: 30px;
@@ -466,7 +478,7 @@
 
         .back-to-top {
             position: fixed;
-            bottom: 120px;
+            bottom: 100px;
             left: 30px;
             background: #D4AF37;
             color: #000;
@@ -480,7 +492,7 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease, transform 0.3s ease;
             z-index: 2500;
         }
 
@@ -491,6 +503,7 @@
 
         .back-to-top:hover {
             background: #E0E0E0;
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -523,11 +536,34 @@
             }
 
             .back-to-top {
-                bottom: 100px;
-                left: 10px;
+                bottom: 80px;
+                left: 20px;
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .promo-banner {
+                max-width: 150px;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            body {
+                background: #000;
+                color: #FFF;
+            }
+
+            .service-card {
+                background: #222;
+                border-color: #FFF;
+            }
+
+            .submit-btn {
+                background: #FFF;
+                color: #000;
             }
         }
 
@@ -563,7 +599,7 @@
                         <a class="nav-link" href="social.html">Соцсети</a>
                     </li>
                     <li class="nav-item">
-                        <a href="sitemap.html" class="nav-link" style="color: #d4a373; text-decoration: none;">Карта сайта</a>
+                        <a class="nav-link" href="sitemap.html">Карта сайта</a>
                     </li>
                 </ul>
             </div>
@@ -576,9 +612,9 @@
         
         <div class="contact-info fade-in">
             <p><strong>Адрес:</strong> ул. Мневники, 21, Москва</p>
-            <div id="map"></div>
-            <p><strong>Телефон:</strong> +7 (993) 258-80-75</p>
-            <p><strong>Email:</strong> romaveter432@gmail.com</p>
+            <div id="map" aria-label="Карта местоположения Barbershop37"></div>
+            <p><strong>Телефон:</strong> <a href="tel:+79932588075">+7 (993) 258-80-75</a></p>
+            <p><strong>Email:</strong> <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a></p>
             <p><strong>Часы работы:</strong> Пн-Вс, 10:00–21:00</p>
         </div>
 
@@ -626,7 +662,7 @@
                     <h3>Выберите услуги:</h3>
                     <div class="service-options">
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Классическая стрижка" data-price="1500">
+                            <input type="checkbox" name="service" value="Классическая стрижка" data-price="1500" data-service-id="haircut">
                             <div class="service-card">
                                 <h4>Классическая стрижка</h4>
                                 <p>Мужская стрижка с учетом ваших пожеланий</p>
@@ -634,7 +670,7 @@
                             </div>
                         </label>
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Стрижка + укладка" data-price="2000">
+                            <input type="checkbox" name="service" value="Стрижка + укладка" data-price="2000" data-service-id="haircut-styling">
                             <div class="service-card">
                                 <h4>Стрижка + укладка</h4>
                                 <p>Стрижка и профессиональная укладка для идеального вида</p>
@@ -642,7 +678,7 @@
                             </div>
                         </label>
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Бритье бороды" data-price="1000">
+                            <input type="checkbox" name="service" value="Бритье бороды" data-price="1000" data-service-id="beard-shaving">
                             <div class="service-card">
                                 <h4>Бритье бороды</h4>
                                 <p>Точное бритье и оформление бороды</p>
@@ -650,7 +686,7 @@
                             </div>
                         </label>
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Детская стрижка" data-price="800">
+                            <input type="checkbox" name="service" value="Детская стрижка" data-price="800" data-service-id="kids-haircut">
                             <div class="service-card">
                                 <h4>Детская стрижка</h4>
                                 <p>Удобная стрижка для детей с заботой и вниманием</p>
@@ -658,7 +694,7 @@
                             </div>
                         </label>
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Уход за волосами" data-price="1200">
+                            <input type="checkbox" name="service" value="Уход за волосами" data-price="1200" data-service-id="hair-care">
                             <div class="service-card">
                                 <h4>Уход за волосами</h4>
                                 <p>Профессиональный уход для здоровья и блеска волос</p>
@@ -666,7 +702,7 @@
                             </div>
                         </label>
                         <label class="service-option">
-                            <input type="checkbox" name="service" value="Окрашивание" data-price="2500">
+                            <input type="checkbox" name="service" value="Окрашивание" data-price="2500" data-service-id="coloring">
                             <div class="service-card">
                                 <h4>Окрашивание</h4>
                                 <p>Стильное окрашивание для смелых образов</p>
@@ -721,23 +757,21 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-clock" id="clock"></div>
+            <div class="footer-counter" id="visitorCounter">Посетителей: 0</div>
             <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Баннер -->
     <div class="promo-banner" id="promoBanner">
         <button class="promo-close">×</button>
         <p>Скидка 10% на первую онлайн-запись!</p>
         <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
     </div>
 
-    <!-- Кнопка "Наверх" -->
     <div class="back-to-top" id="backToTop">↑</div>
 
-    <!-- Подключаем Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <!-- Подключаем Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Инициализация карты
@@ -766,6 +800,17 @@
                     this.setCustomValidity('');
                 }
             });
+
+            // Предвыбор услуг из избранного
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const checkboxes = document.querySelectorAll('input[name="service"]');
+            checkboxes.forEach(checkbox => {
+                const serviceId = checkbox.getAttribute('data-service-id');
+                if (favorites.includes(serviceId)) {
+                    checkbox.checked = true;
+                }
+            });
+            updateTotalPrice();
         });
 
         // Валидация имени
@@ -984,8 +1029,38 @@
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
+
+        // Анимация появления
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Часы
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getElementById('seconds').toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Счетчик посетителей
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCounter').textContent = `Посетителей: ${visitorCount}`;
     </script>
-    <div class="back-to-top" id="backToTop">↑</div>
 </body>
 </html>

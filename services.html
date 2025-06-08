@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="Услуги Barbershop37 в Москве: стрижки, уход за бородой, окрашивание и многое другое. Запишитесь онлайн и получите скидку 10%!">
+    <meta name="keywords" content="барбершоп, стрижки, уход за бородой, Москва">
     <title>Услуги - Barbershop37</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @font-face {
             font-family: 'Planet Kosmos';
@@ -66,6 +67,32 @@
             text-shadow: 0 0 10px #D4AF37;
         }
 
+        .search-bar {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto 1rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem 2rem 0.5rem 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #D4AF37;
+            background: rgba(255, 255, 255, 0.1);
+            color: #E0E0E0;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #D4AF37;
+            font-size: 1.2rem;
+        }
+
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
@@ -96,6 +123,42 @@
             margin: 0 auto 2rem;
         }
 
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filters button {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .filters button:hover,
+        .filters button.active {
+            background: #D4AF37;
+            color: #1C2526;
+        }
+
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            min-height: 0;
+            transition: min-height 0.3s ease;
+        }
+
+        .service-item {
+            flex: 0 0 calc(33.333% - 1rem);
+            max-width: calc(33.333% - 1rem);
+        }
+
         .service-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #D4AF37;
@@ -104,6 +167,7 @@
             margin-bottom: 1rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .service-card:hover {
@@ -129,6 +193,26 @@
             font-weight: 700;
         }
 
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #D4AF37;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .favorite-btn i.fas {
+            color: #D4AF37;
+        }
+
+        .favorite-btn:hover i {
+            color: #E0E0E0;
+        }
+
         .btn-primary {
             background-color: #D4AF37;
             color: #1C2526;
@@ -144,17 +228,6 @@
             background-color: #E0E0E0;
             box-shadow: 0 0 15px #D4AF37;
             transform: scale(1.05);
-        }
-
-        .hidden-services {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .hidden-services.show {
-            display: flex;
-            opacity: 1;
         }
 
         .advantages-section {
@@ -252,6 +325,20 @@
         .footer-copy {
             text-align: center;
             margin-top: 1.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .footer-clock {
+            text-align: center;
+            margin-top: 1rem;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+
+        .footer-counter {
+            text-align: center;
+            margin-top: 0.5rem;
             color: #b0b0b0;
             font-size: 0.9rem;
         }
@@ -369,6 +456,49 @@
                 height: 40px;
                 font-size: 1.2rem;
             }
+
+            .filters {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .filters button {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .service-item {
+                flex: 0 0 calc(50% - 0.75rem);
+                max-width: calc(50% - 0.75rem);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .promo-banner {
+                max-width: 150px;
+            }
+
+            .service-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            body {
+                background: #000;
+                color: #FFF;
+            }
+
+            .service-card {
+                background: #222;
+                border-color: #FFF;
+            }
+
+            .btn-primary {
+                background: #FFF;
+                color: #000;
+            }
         }
 
         @keyframes pulse {
@@ -403,7 +533,7 @@
                         <a class="nav-link" href="social.html">Соцсети</a>
                     </li>
                     <li class="nav-item">
-                        <a href="sitemap.html" class="nav-link" style="color: #d4a373; text-decoration: none;">Карта сайта</a>
+                        <a class="nav-link" href="sitemap.html">Карта сайта</a>
                     </li>
                 </ul>
             </div>
@@ -413,51 +543,78 @@
     <section class="services-section">
         <h1 class="fade-in">Наши услуги</h1>
         <p class="fade-in">Мы предлагаем полный спектр услуг для создания вашего идеального образа — от классических стрижек до ухода за бородой.</p>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Поиск услуг..." aria-label="Поиск услуг">
+            <button aria-label="Найти"><span>🔍</span></button>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="haircut">Стрижки</button>
+            <button class="filter-btn" data-filter="beard">Уход за бородой</button>
+            <button class="filter-btn" data-filter="kids">Для детей</button>
+            <button class="filter-btn" data-filter="favorites">Избранное</button>
+        </div>
+        <div class="row services-list">
+            <div class="col-md-4 service-item" data-category="haircut" data-service-id="haircut">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="haircut" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Стрижка</h3>
                     <p>Классическая мужская стрижка с учетом ваших пожеланий.</p>
                     <p class="price">1500 ₽</p>
                     <button class="btn btn-primary" onclick="location.href='contact.html'">Записаться</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 service-item" data-category="haircut" data-service-id="haircut-styling">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="haircut-styling" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Стрижка + укладка</h3>
                     <p>Стрижка и профессиональная укладка для идеального вида.</p>
                     <p class="price">2000 ₽</p>
                     <button class="btn btn-primary" onclick="location.href='contact.html'">Записаться</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 service-item" data-category="beard" data-service-id="beard-shaving">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="beard-shaving" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Бритье бороды</h3>
                     <p>Точное бритье и оформление бороды.</p>
                     <p class="price">1000 ₽</p>
                     <button class="btn btn-primary" onclick="location.href='contact.html'">Записаться</button>
                 </div>
             </div>
-        </div>
-        <div class="row hidden-services" id="hiddenServices">
-            <div class="col-md-4">
+            <div class="col-md-4 service-item" data-category="kids" data-service-id="kids-haircut">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="kids-haircut" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Детская стрижка</h3>
                     <p>Удобная стрижка для детей с заботой и вниманием.</p>
                     <p class="price">800 ₽</p>
                     <button class="btn btn-primary" onclick="location.href='contact.html'">Записаться</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 service-item" data-category="haircut" data-service-id="hair-care">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="hair-care" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Уход за волосами</h3>
                     <p>Профессиональный уход для здоровья и блеска волос.</p>
                     <p class="price">1200 ₽</p>
                     <button class="btn btn-primary" onclick="location.href='contact.html'">Записаться</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 service-item" data-category="haircut" data-service-id="coloring">
                 <div class="service-card fade-in">
+                    <button class="favorite-btn" data-service-id="coloring" aria-label="Добавить в избранное">
+                        <i class="far fa-heart"></i>
+                    </button>
                     <h3>Окрашивание</h3>
                     <p>Стильное окрашивание для смелых образов.</p>
                     <p class="price">2500 ₽</p>
@@ -465,7 +622,6 @@
                 </div>
             </div>
         </div>
-        <button id="showMoreBtn" class="btn btn-primary">Показать больше</button>
 
         <div class="advantages-section fade-in">
             <h2>Почему мы?</h2>
@@ -483,7 +639,7 @@
                     <p>Подбираем стиль, идеально подходящий именно вам.</p>
                 </li>
             </ul>
-            <p class="fade-in" style="margin-top: 1.5rem;">В Barbershop37 мы стремимся к тому, чтобы каждый клиент чувствовал себя особенным. Наша философия — сочетание классического мастерства и современных трендов для создания вашего уникального образа.</p>
+            <p style="margin-top: 1.5rem;">В Barbershop37 мы стремимся к тому, чтобы каждый клиент чувствовал себя особенным. Наша философия — сочетание классического мастерства и современных трендов для создания вашего уникального образа.</p>
         </div>
     </section>
 
@@ -518,6 +674,8 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-clock" id="clock"></div>
+            <div class="footer-counter" id="visitorCounter">Посетителей: 0</div>
             <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
         </div>
     </footer>
@@ -532,27 +690,108 @@
         ↑
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
     <script>
-        // Показать/скрыть дополнительные услуги
-        const showMoreBtn = document.getElementById('showMoreBtn');
-        const hiddenServices = document.getElementById('hiddenServices');
-        showMoreBtn.addEventListener('click', () => {
-            hiddenServices.classList.toggle('show');
-            showMoreBtn.textContent = hiddenServices.classList.contains('show') ? 'Скрыть' : 'Показать больше';
-        });
+        // Инициализация избранного из localStorage
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        // Плавный скролл для навигации
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Функция для обновления иконок избранного
+        function updateFavoriteIcons() {
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                const serviceId = btn.getAttribute('data-service-id');
+                const icon = btn.querySelector('i');
+                if (favorites.includes(serviceId)) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+        }
+
+        // Обработчик для кнопок избранного
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const serviceId = btn.getAttribute('data-service-id');
+                if (favorites.includes(serviceId)) {
+                    favorites = favorites.filter(id => id !== serviceId);
+                } else {
+                    favorites.push(serviceId);
+                }
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                updateFavoriteIcons();
+                // Если активен фильтр "Избранное", обновляем отображение
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                if (activeFilter === 'favorites') {
+                    filterServices('favorites');
+                }
             });
         });
 
-        // Закрытие баннера
+        // Функция фильтрации услуг
+        function filterServices(filter) {
+            const serviceItems = document.querySelectorAll('.service-item');
+            const servicesList = document.querySelector('.services-list');
+            let visibleCount = 0;
+
+            serviceItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const serviceId = item.getAttribute('data-service-id');
+                if (filter === 'all') {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else if (filter === 'favorites') {
+                    if (favorites.includes(serviceId)) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                } else if (category === filter) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            servicesList.style.minHeight = visibleCount < 3 ? `${visibleCount * 300}px` : '0';
+        }
+
+        // Фильтры
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                filterServices(filter);
+            });
+        });
+
+        // Поиск
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            const serviceItems = document.querySelectorAll('.service-item');
+            const servicesList = document.querySelector('.services-list');
+            let visibleCount = 0;
+
+            serviceItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            servicesList.style.minHeight = visibleCount < 3 ? `${visibleCount * 300}px` : '0';
+        });
+
+        // Промо-баннер
         document.addEventListener('DOMContentLoaded', () => {
             const promoBanner = document.getElementById('promoBanner');
             if (promoBanner) {
@@ -561,24 +800,56 @@
                     promoBanner.classList.add('hidden');
                 });
             }
+            // Инициализация иконок избранного при загрузке страницы
+            updateFavoriteIcons();
         });
 
-        // Показ кнопки "вверх"
+        // Кнопка "Вверх"
         const backToTop = document.getElementById('backToTop');
         const footer = document.querySelector('footer');
-
         window.addEventListener('scroll', () => {
-            const footerTop = footer.getBoundingClientRect().top;
-            if (footerTop <= window.innerHeight) {
+            const footerPosition = footer.getBoundingClientRect().top;
+            if (footerPosition <= window.innerHeight) {
                 backToTop.classList.add('show');
             } else {
                 backToTop.classList.remove('show');
             }
         });
-
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Анимация появления
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Часы
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Счетчик посетителей
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCounter').textContent = `Посетителей: ${visitorCount}`;
     </script>
 </body>
 </html>
