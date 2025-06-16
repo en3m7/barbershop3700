@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Barbershop37</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1C2526 0%, #000000 100%);
+            color: #E0E0E0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cabinet-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #D4AF37;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+        }
+        .cabinet-container h2 {
+            color: #D4AF37;
+            font-family: 'Planet Kosmos', sans-serif;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .user-info {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #1C2526;
+            border: none;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        .btn-primary:hover {
+            background-color: #E0E0E0;
+            box-shadow: 0 0 15px #D4AF37;
+        }
+        .error {
+            color: #ff4444;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .edit-btn {
+            background-color: #D4AF37;
+            color: #1C2526;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        .edit-btn:hover {
+            background-color: #E0E0E0;
+            box-shadow: 0 0 10px #D4AF37;
+        }
+        .delete-btn {
+            background-color: #ff4444;
+            color: #fff;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        .delete-btn:hover {
+            background-color: #cc0000;
+            box-shadow: 0 0 10px #ff4444;
+        }
+        .appointments {
+            margin-top: 1.5rem;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+        .appointment-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+        .appointment-item button {
+            background-color: #ff6666;
+            color: #fff;
+            border: none;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        .appointment-item button:hover {
+            background-color: #cc3333;
+        }
+    </style>
+</head>
+<body>
+    <div class="cabinet-container" id="cabinetContainer">
+        <h2>Личный кабинет</h2>
+        <div id="loginForm" style="display: block;">
+            <form id="loginCabinet">
+                <div class="form-group mb-3">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" required>
+                    <div id="loginEmailError" class="error">Введите корректный email</div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" class="form-control" id="loginPassword" required>
+                    <div id="loginPasswordError" class="error">Неверный email или пароль</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <p class="mt-3 text-center">Ещё не зарегистрированы? <a href="register.html" style="color: #D4AF37;">Зарегистрироваться</a></p>
+                <button id="goToHomeBtn" class="btn btn-primary">Выход на главную страницу</button>
+            </form>
+        </div>
+        <div id="userInfo" style="display: none;">
+            <div class="user-info">
+                <h4>Привет, <span id="userName"></span>!</h4>
+                <p>Email: <span id="userEmail"></span> <button id="editEmailBtn" class="edit-btn">Изменить</button></p>
+                <p>Телефон: <span id="userPhone"></span> <button id="editPhoneBtn" class="edit-btn">Изменить</button></p>
+                <p>Дата рождения: <span id="userBirthdate"></span> <button id="editBirthdateBtn" class="edit-btn">Изменить</button></p>
+            </div>
+            <div class="appointments" id="appointmentsList"></div>
+            <button id="logoutBtn" class="btn btn-primary">Выйти</button>
+            <button id="goToHomeBtn" class="btn btn-primary">Выход на главную страницу</button>
+            <button id="deleteAccountBtn" class="btn delete-btn">Удалить учетную запись</button>
+        </div>
+        <div id="editForm" style="display: none;">
+            <form id="editUserForm">
+                <div class="form-group mb-3">
+                    <label for="editEmail">Новый Email</label>
+                    <input type="email" class="form-control" id="editEmail" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="editPhone">Новый Телефон</label>
+                    <input type="tel" class="form-control" id="editPhone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="editBirthdate">Новая Дата рождения</label>
+                    <input type="date" class="form-control" id="editBirthdate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <button id="cancelEditBtn" class="btn btn-primary" style="margin-top: 0.5rem;">Отмена</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const userInfo = document.getElementById('userInfo');
+        const editForm = document.getElementById('editForm');
+        const loginCabinet = document.getElementById('loginCabinet');
+        const loginEmail = document.getElementById('loginEmail');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginEmailError = document.getElementById('loginEmailError');
+        const loginPasswordError = document.getElementById('loginPasswordError');
+        const userName = document.getElementById('userName');
+        const userEmail = document.getElementById('userEmail');
+        const userPhone = document.getElementById('userPhone');
+        const userBirthdate = document.getElementById('userBirthdate');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const goToHomeBtn = document.getElementById('goToHomeBtn');
+        const deleteAccountBtn = document.getElementById('deleteAccountBtn');
+        const editEmailBtn = document.getElementById('editEmailBtn');
+        const editPhoneBtn = document.getElementById('editPhoneBtn');
+        const editBirthdateBtn = document.getElementById('editBirthdateBtn');
+        const editUserForm = document.getElementById('editUserForm');
+        const editEmail = document.getElementById('editEmail');
+        const editPhone = document.getElementById('editPhone');
+        const editBirthdate = document.getElementById('editBirthdate');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const appointmentsList = document.getElementById('appointmentsList');
+
+        // Проверка авторизации при загрузке
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            const user = JSON.parse(currentUser);
+            loginForm.style.display = 'none';
+            userInfo.style.display = 'block';
+            userName.textContent = user.name;
+            userEmail.textContent = user.email;
+            userPhone.textContent = user.phone;
+            userBirthdate.textContent = new Date(user.birthdate).toLocaleDateString('ru-RU');
+            loadAppointments();
+        }
+
+        loginCabinet.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = loginEmail.value.trim();
+            const password = loginPassword.value;
+            loginEmailError.style.display = 'none';
+            loginPasswordError.style.display = 'none';
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                loginPasswordError.style.display = 'block';
+                return;
+            }
+
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            loginForm.style.display = 'none';
+            userInfo.style.display = 'block';
+            userName.textContent = user.name;
+            userEmail.textContent = user.email;
+            userPhone.textContent = user.phone;
+            userBirthdate.textContent = new Date(user.birthdate).toLocaleDateString('ru-RU');
+            loadAppointments();
+        });
+
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('currentUser');
+            loginForm.style.display = 'block';
+            userInfo.style.display = 'none';
+            loginEmail.value = '';
+            loginPassword.value = '';
+        });
+
+        goToHomeBtn.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+        deleteAccountBtn.addEventListener('click', function() {
+            if (confirm('Вы уверены, что хотите удалить учетную запись? Все данные будут потеряны.')) {
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+                const userIndex = users.findIndex(u => u.email === currentUserData.email);
+                if (userIndex !== -1) {
+                    users.splice(userIndex, 1);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    localStorage.removeItem('currentUser');
+                    localStorage.removeItem(`appointments_${currentUserData.email}`);
+                    loginForm.style.display = 'block';
+                    userInfo.style.display = 'none';
+                    alert('Учетная запись удалена!');
+                }
+            }
+        });
+
+        editEmailBtn.addEventListener('click', function() {
+            userInfo.style.display = 'none';
+            editForm.style.display = 'block';
+            editEmail.value = userEmail.textContent;
+            editPhone.value = userPhone.textContent;
+            editBirthdate.value = userBirthdate.textContent.split('.').reverse().join('-');
+        });
+
+        editPhoneBtn.addEventListener('click', function() {
+            userInfo.style.display = 'none';
+            editForm.style.display = 'block';
+            editEmail.value = userEmail.textContent;
+            editPhone.value = userPhone.textContent;
+            editBirthdate.value = userBirthdate.textContent.split('.').reverse().join('-');
+        });
+
+        editBirthdateBtn.addEventListener('click', function() {
+            userInfo.style.display = 'none';
+            editForm.style.display = 'block';
+            editEmail.value = userEmail.textContent;
+            editPhone.value = userPhone.textContent;
+            editBirthdate.value = userBirthdate.textContent.split('.').reverse().join('-');
+        });
+
+        editUserForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newEmail = editEmail.value.trim();
+            const newPhone = editPhone.value.trim();
+            const newBirthdate = editBirthdate.value;
+
+            if (!/^\S+@\S+\.\S+$/.test(newEmail)) {
+                alert('Введите корректный email');
+                return;
+            }
+            if (!/^\+7\d{10}$/.test(newPhone.replace(/\D/g, ''))) {
+                alert('Введите корректный номер телефона (например, +79991234567)');
+                return;
+            }
+            if (!newBirthdate) {
+                alert('Выберите дату рождения');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+            const userIndex = users.findIndex(u => u.email === currentUserData.email);
+
+            if (userIndex !== -1) {
+                const oldEmail = currentUserData.email;
+                users[userIndex] = { ...users[userIndex], email: newEmail, phone: newPhone, birthdate: newBirthdate };
+                localStorage.setItem('users', JSON.stringify(users));
+                localStorage.setItem('currentUser', JSON.stringify(users[userIndex]));
+                const appointments = JSON.parse(localStorage.getItem(`appointments_${oldEmail}`) || '[]');
+                if (appointments.length > 0) {
+                    localStorage.setItem(`appointments_${newEmail}`, JSON.stringify(appointments));
+                    localStorage.removeItem(`appointments_${oldEmail}`);
+                }
+                userEmail.textContent = newEmail;
+                userPhone.textContent = newPhone;
+                userBirthdate.textContent = new Date(newBirthdate).toLocaleDateString('ru-RU');
+                editForm.style.display = 'none';
+                userInfo.style.display = 'block';
+                loadAppointments();
+                alert('Данные успешно обновлены!');
+            }
+        });
+
+        cancelEditBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            editForm.style.display = 'none';
+            userInfo.style.display = 'block';
+        });
+
+        function loadAppointments() {
+            const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUserData) {
+                const appointments = JSON.parse(localStorage.getItem(`appointments_${currentUserData.email}`) || '[]');
+                appointmentsList.innerHTML = '';
+                appointments.forEach(appointment => {
+                    const div = document.createElement('div');
+                    div.className = 'appointment-item';
+                    div.innerHTML = `
+                        <span>${new Date(appointment.date).toLocaleDateString('ru-RU')} ${appointment.time} - ${appointment.service} (Мастер: ${appointment.master})</span>
+                        <button onclick="deleteAppointment(${appointment.id})">Удалить</button>
+                    `;
+                    appointmentsList.appendChild(div);
+                });
+            }
+        }
+
+        window.deleteAppointment = function(id) {
+            const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+            let appointments = JSON.parse(localStorage.getItem(`appointments_${currentUserData.email}`) || '[]');
+            const updatedAppointments = appointments.filter(a => a.id !== id);
+            localStorage.setItem(`appointments_${currentUserData.email}`, JSON.stringify(updatedAppointments));
+            loadAppointments();
+        };
+    </script>
+</body>
+</html>

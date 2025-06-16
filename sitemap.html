@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="Карта сайта Barbershop37: обзор всех разделов для удобной навигации.">
+    <meta name="keywords" content="барбершоп, карта сайта, навигация, Москва">
     <title>Карта сайта - Barbershop37</title>
-    <!-- Подключаем Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Подключаем шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @font-face {
             font-family: 'Planet Kosmos';
@@ -45,7 +46,6 @@
             100% { background-position: 200% 50%; }
         }
 
-        /* Стили навигации */
         .navbar {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -75,13 +75,51 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28212, 175, 55, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-        .navbar-collapse {
-            justify-content: flex-end;
+        .search-bar {
+            position: relative;
+            max-width: 200px;
+            margin-left: 1rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem 2rem 0.5rem 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #D4AF37;
+            background: rgba(255, 255, 255, 0.1);
+            color: #E0E0E0;
+            font-size: 0.9rem;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+
+        .search-bar-site {
+            background: rgba(0, 0, 0, 0.5);
+            color: #E0E0E0;
+            width: 100%;
+        }
+
+        .search-bar-site::placeholder {
+            color: #D4AF37;
         }
 
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .sitemap-section {
@@ -168,7 +206,7 @@
         .footer-section h3 {
             font-family: 'Planet Kosmos', sans-serif;
             color: #D4AF37;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin-bottom: 0.75rem;
         }
 
@@ -203,280 +241,167 @@
             font-size: 0.9rem;
         }
 
-                    .back-to-top {
-        position: fixed;
-        bottom: 120px;
-        left: 30px;
-        background: #D4AF37;
-        color: #000;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-        z-index: 2500;
-    }
+        .footer-clock {
+            text-align: center;
+            margin-top: 1rem;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
 
-    .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
-    }
+        .footer-counter {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
 
-    .back-to-top:hover {
-        background: #E0E0E0;
-    }
-
-    @media (max-width: 768px) {
         .back-to-top {
-            bottom: 100px;
-            left: 10px;
+            position: fixed;
+            bottom: 120px;
+            left: 30px;
+            background: #D4AF37;
             width: 40px;
             height: 40px;
-            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease, transform 0.3s ease;
+            z-index: 2500;
         }
-    }
 
-    .promo-banner {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #D4AF37;
-        color: #000;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-        max-width: 240px;
-        z-index: 2000;
-        animation: pulse 2.5s infinite;
-        text-align: center;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
 
-    .promo-banner.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
+        .back-to-top:hover {
+            background: #E0E0E0;
+            transform: scale(1.1);
+        }
 
-    .promo-banner p {
-        margin: 0 0 0.75rem;
-        font-size: 0.95rem;
-        font-weight: 500;
-        line-height: 1.4;
-    }
+        .back-to-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-    .promo-btn {
-        display: inline-block;
-        background: #000;
-        color: #fff;
-        text-decoration: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 6px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
+        .accessibility-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: 1rem;
+        }
 
-    .promo-btn:hover {
-        background: #333;
-        transform: scale(1.05);
-    }
+        .accessibility-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #D4AF37;
+            transition: transform 0.3s ease;
+        }
 
-    .promo-close {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: none;
-        border: none;
-        color: #000;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
+        .accessibility-btn:hover svg {
+            transform: scale(1.2);
+        }
 
-    .promo-close:hover {
-        color: #fff;
-    }
+        .contrast-mode {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode body::before {
+            display: none;
+        }
+
+        .contrast-mode .navbar,
+        .contrast-mode .footer,
+        .contrast-mode .sitemap-item {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .contrast-mode .sitemap-section h1,
+        .contrast-mode .sitemap-section p,
+        .contrast-mode .sitemap-item h4,
+        .contrast-mode .sitemap-item p,
+        .contrast-mode .sitemap-item a,
+        .contrast-mode .footer-section h3,
+        .contrast-mode .footer-section p,
+        .contrast-mode .footer-section a,
+        .contrast-mode .footer-copy,
+        .contrast-mode .footer-clock,
+        .contrast-mode .footer-counter {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .navbar-brand,
+        .contrast-mode .nav-link,
+        .contrast-mode .search-bar button span,
+        .contrast-mode .accessibility-btn svg {
+            color: #FFFFFF !important;
+            fill: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar-site {
+            background: #222222 !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar-site::placeholder {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .back-to-top {
+            background: #FFFFFF !important;
+            color: #000000 !important;
+        }
 
         @media (max-width: 768px) {
+            .sitemap-items {
+                grid-template-columns: 1fr;
+            }
+
             .footer-content {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .promo-banner {
-                max-width: 180px;
-                bottom: 10px;
-                right: 10px;
+            .back-to-top {
+                bottom: 80px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .search-bar {
+                max-width: 150px;
             }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-}
-
-
-        .services-section {
-            margin: 2rem 0;
-        }
-
-        .services-section h3 {
-            color: #D4AF37;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            text-align: center;
-        }
-
-        .service-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .service-option {
-            display: block;
-            cursor: pointer;
-        }
-
-        .service-option input[type="checkbox"] {
-            display: none;
-        }
-
-        .service-card {
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid #3a3a3a;
-            border-radius: 10px;
-            padding: 1.2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            border-color: #D4AF37;
-        }
-
-        .service-card h4 {
-            color: #D4AF37;
-            margin: 0 0 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        .service-card p {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-            min-height: 40px;
-        }
-
-        .service-price {
-            color: #E0E0E0;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 0.8rem;
-        }
-
-        .service-option input[type="checkbox"]:checked + .service-card {
-            border-color: #D4AF37;
-            background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background-color: #D4AF37;
-            color: #1C2526;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Planet Kosmos', sans-serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .submit-btn:hover {
-            background-color: #E0E0E0;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-            transform: none;
-            box-shadow: none;
-        }
-
-        #result {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 500;
-            display: none;
-        }
-
-        .success {
-            background-color: rgba(46, 125, 50, 0.3);
-            color: #a5d6a7;
-            border: 1px solid #2e7d32;
-            display: block;
-        }
-
-        .error {
-            background-color: rgba(198, 40, 40, 0.3);
-            color: #ffabab;
-            border: 1px solid #c62828;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .contact-fields {
-                grid-template-columns: 1fr;
+        @media (prefers-contrast: high) {
+            body {
+                background: #000;
+                color: #FFF;
             }
 
-            .tg-form-container {
-                padding: 1.5rem;
-                margin: 1rem;
+            .sitemap-item {
+                background: #222;
+                border-color: #FFF;
             }
-
-            .sitemap-items {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        footer {
-            background: rgb(24, 24, 24);
-            padding: 1rem 0;
-            text-align: center;
-            font-size: clamp(0.8rem, 1.5vw, 1rem);
-            width: 100%;
         }
     </style>
 </head>
-<xaiArtifact artifact_id="e5ef07a2-4845-4b12-85f0-8ae30e1077be" artifact_version_id="0d42c644-9dcd-43ec-9635-078312888348" title="New HTML Footer" contentType="text/html"></xaiArtifact>
 <body>
-    <!-- Навигация -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="index.html">Barbershop37</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -497,14 +422,26 @@
                         <a class="nav-link" href="social.html">Соцсети</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="sitemap.html">Карта сайта</a>
+                        <a class="nav-link active" href="sitemap.html" aria-current="page">Карта сайта</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cabinet.html">Личный кабинет</a>
                     </li>
                 </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInputSite" class="search-bar-site" placeholder="Поиск..." aria-label="Поиск по сайту">
+                    <button aria-label="Найти"><span>🔍</span></button>
+                </div>
+                <button class="accessibility-btn" aria-label="Переключить версию для слабовидящих">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section class="sitemap-section">
+    <section class="sitemap-section" role="region" aria-label="Карта сайта">
         <h1 class="fade-in">Карта сайта</h1>
         <p class="fade-in">Ознакомьтесь со всеми разделами нашего сайта для удобной навигации.</p>
 
@@ -539,77 +476,133 @@
                 <p>Обзор всех страниц для быстрого доступа.</p>
                 <a href="sitemap.html">Вы здесь</a>
             </div>
+            <div class="sitemap-item">
+                <h4>Личный кабинет</h4>
+                <p>Управляйте вашими записями и настройками профиля.</p>
+                <a href="cabinet.html">Перейти</a>
+            </div>
         </div>
     </section>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Barbershop37</h3>
-                <p>Профессиональные стрижки и уход за внешностью с акцентом на качество и стиль.<br>
-                ул. Мневники, 21, Москва<br>
-                <a href="tel:+79932588075">+7 (993) 258-80-75</a><br>
-                <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a><br>
-                Пн-Вс, 10:00–21:00</p>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Barbershop37</h3>
+                    <p>Профессиональные стрижки и уход за внешностью с акцентом на качество и стиль.<br>
+                    ул. Мневники, 21, Москва<br>
+                    <a href="tel:+79932588075">+7 (993) 258-80-75</a><br>
+                    <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a><br>
+                    Пн-Вс, 10:00–21:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Соцсети</h3>
+                    <ul class="footer-socials">
+                        <li><a href="https://t.me/en3m7">Telegram</a></li>
+                        <li><a href="https://vk.com/kolyawab">VKontakte</a></li>
+                        <li><a href="ig.html">Instagram</a></li>
+                        <li><a href="https://wa.me/78120370105">WhatsApp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="social.html">Соцсети</a></li>
+                        <li><a href="sitemap.html">Карта сайта</a></li>
+                        <li><a href="cabinet.html">Личный кабинет</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Соцсети</h3>
-                <ul class="footer-socials">
-                    <li><a href="https://t.me/en3m7">Telegram</a></li>
-                    <li><a href="https://vk.com/kolyawab">ВКонтакте</a></li>
-                    <li><a href="ig.html">Instagram</a></li>
-                    <li><a href="https://wa.me/78120370105">WhatsApp</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Навигация</h3>
-                <ul class="footer-nav">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="services.html">Услуги</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                    <li><a href="social.html">Соцсети</a></li>
-                    <li><a href="sitemap.html">Карта сайта</a></li>
-                </ul>
-            </div>
+            <div class="footer-clock" id="clock"></div>
+            <div class="footer-counter" id="visitorCounter">Посетителей: 0</div>
+            <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
         </div>
-        <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" aria-label="Вернуться вверх">
+        <img src="pics/arrow.png" alt="Вернуться вверх">
     </div>
-</footer>
 
-<!-- Новый баннер (добавлять только на contact.html) -->
-<div class="promo-banner" id="promoBanner">
-    <button class="promo-close">&times;</button>
-    <p>Скидка 10% на первую онлайн-запись!</p>
-    <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
-</div>            <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const promoBanner = document.getElementById('promoBanner');
-    if (promoBanner) {
-        const promoClose = promoBanner.querySelector('.promo-close');
-        promoClose.addEventListener('click', () => {
-            promoBanner.classList.add('hidden');
-        });
-    }
-});
-    const backToTop = document.getElementById('backToTop');
-        const footer = document.querySelector('footer');
-
-        window.addEventListener('scroll', () => {
-            const footerPosition = footer.getBoundingClientRect().top;
-            if (footerPosition <= window.innerHeight) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <div class="back-to-top" id="backToTop">↑</div>
+    <script>
+        // Анимация появления
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Переключение версии для слабовидящих
+        const accessibilityBtn = document.querySelector('.accessibility-btn');
+        if (accessibilityBtn) {
+            accessibilityBtn.addEventListener('click', () => {
+                document.body.classList.toggle('contrast-mode');
+                accessibilityBtn.setAttribute('aria-label', document.body.classList.contains('contrast-mode') ? 'Переключить на обычную версию' : 'Переключить версию для слабовидящих');
+            });
+        }
+
+        // Кнопка "Вверх"
+        const backToTop = document.getElementById('backToTop');
+        const footer = document.querySelector('footer');
+        if (backToTop && footer) {
+            window.addEventListener('scroll', () => {
+                const footerTop = footer.getBoundingClientRect().top;
+                backToTop.classList.toggle('show', footerTop <= window.innerHeight);
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Часы
+        const clock = document.getElementById('clock');
+        if (clock) {
+            const updateClock = () => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                const date = now.toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' });
+                clock.textContent = `Текущее время: ${hours}:${minutes}:${seconds}, ${date}`;
+            };
+            setInterval(updateClock, 1000);
+            updateClock();
+        }
+
+        // Счётчик посетителей
+        const visitorCounter = document.getElementById('visitorCounter');
+        if (visitorCounter) {
+            let visitorCount = parseInt(localStorage.getItem('visitorCount') || '0');
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            visitorCounter.textContent = `Посетителей: ${visitorCount}`;
+        }
+
+        // Поиск по сайту
+        const searchInputSite = document.getElementById('searchInputSite');
+        if (searchInputSite) {
+            searchInputSite.addEventListener('input', (e) => {
+                e.preventDefault();
+                const query = e.target.value.toLowerCase().trim();
+                const sections = document.querySelectorAll('section, footer');
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    section.style.display = (text.includes(query) || !query) ? '' : 'none';
+                    section.classList.toggle('hidden-section', !text.includes(query) && query);
+                });
+            });
+        }
+    </script>
 </body>
 </html>

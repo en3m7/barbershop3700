@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="О нас - Barbershop37 в Москве. Узнайте о нашей команде мастеров, миссии и отзывах клиентов.">
+    <meta name="keywords" content="барбершоп, о нас, мастера, Москва">
     <title>О нас - Barbershop37</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @font-face {
             font-family: 'Planet Kosmos';
@@ -64,6 +67,47 @@
             text-shadow: 0 0 10px #D4AF37;
         }
 
+        .search-bar {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto 1rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem 2rem 0.5rem 0.5rem;
+            border-radius: 5px;
+            border: 2px solid #D4AF37;
+            background: rgba(255, 255, 255, 0.1);
+            color: #E0E0E0;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #D4AF37;
+            font-size: 1.2rem;
+        }
+
+        .search-bar-site {
+            padding: 0.5rem;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #E0E0E0;
+            width: 150px;
+            margin-left: 1rem;
+        }
+
+        .search-bar-site::placeholder {
+            color: #D4AF37;
+        }
+
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
@@ -110,7 +154,7 @@
             background: rgba(255, 255, 255, 0.1);
             color: #D4AF37;
             font-family: 'Planet Kosmos', sans-serif;
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             transition: background-color 0.3s ease;
             position: relative;
             padding-right: 3rem;
@@ -118,27 +162,23 @@
 
         .accordion-button::after {
             content: '+';
-            font-family: 'Planet Kosmos', sans-serif !important;
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
             color: #D4AF37;
             position: absolute;
             right: 1rem;
             transition: transform 0.3s ease;
             background-image: none;
-            line-height: 1;
         }
 
         .accordion-button:not(.collapsed)::after {
             content: '−';
-            transform: rotate(180deg);
+            transform: rotate(0deg);
         }
 
         .accordion-button:not(.collapsed) {
             background-color: rgba(212, 175, 55, 0.2);
-            color: #FFFFFF;
-            font-weight: 700;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+            color: #E0E0E0;
         }
 
         .accordion-button:focus {
@@ -153,8 +193,8 @@
         }
 
         .accordion-body img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
             border-radius: 10px;
             margin-right: 1.5rem;
@@ -168,32 +208,35 @@
         .accordion-body h3 {
             font-family: 'Planet Kosmos', sans-serif;
             color: #D4AF37;
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             margin-bottom: 0.5rem;
         }
 
         .accordion-body p {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
             margin: 0;
-            color: #FFFFFF;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            color: #E0E0E0;
         }
 
         .mission-section {
             padding: 3rem 1rem;
             text-align: center;
+            background: rgba(28, 37, 38, 0.6);
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 800px;
         }
 
         .mission-section h2 {
             font-family: 'Planet Kosmos', sans-serif;
             color: #D4AF37;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
             margin-bottom: 1rem;
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         .mission-section p {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -204,7 +247,6 @@
             background: #D4AF37;
             margin: 2rem auto;
             opacity: 0.7;
-            animation: pulse 3s infinite ease-in-out;
         }
 
         .reviews-section {
@@ -216,7 +258,7 @@
         .reviews-section h2 {
             font-family: 'Planet Kosmos', sans-serif;
             color: #D4AF37;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
             text-align: center;
             margin-bottom: 2rem;
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
@@ -224,7 +266,7 @@
 
         .review-card {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #D4AF37;
+            border: 2px solid #D4AF37;
             border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 1rem;
@@ -240,13 +282,35 @@
         .review-card h4 {
             font-family: 'Planet Kosmos', sans-serif;
             color: #D4AF37;
-            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin-bottom: 0.5rem;
         }
 
         .review-card p {
-            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
             color: #E0E0E0;
+        }
+
+        .video-section {
+            padding: 3rem 1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .video-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #D4AF37;
+            border-radius: 10px;
         }
 
         .footer {
@@ -304,6 +368,20 @@
             font-size: 0.9rem;
         }
 
+        .footer-clock {
+            text-align: center;
+            margin-top: 1rem;
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+
+        .footer-counter {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
         .promo-banner {
             position: fixed;
             bottom: 30px;
@@ -348,7 +426,7 @@
 
         .promo-btn:hover {
             background: #333;
-            transform: scale(1.05);
+            transform: scale(0.95);
         }
 
         .promo-close {
@@ -358,7 +436,7 @@
             background: none;
             border: none;
             color: #000;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -370,21 +448,19 @@
 
         .back-to-top {
             position: fixed;
-            bottom: 100px;
+            bottom: 120px;
             left: 30px;
             background: #D4AF37;
-            color: #000;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            justify-content: center;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease, transform 0.3s ease;
             z-index: 2500;
         }
 
@@ -396,6 +472,123 @@
         .back-to-top:hover {
             background: #E0E0E0;
             transform: scale(1.1);
+        }
+
+        .back-to-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .accessibility-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .accessibility-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #D4AF37;
+            transition: transform 0.3s ease;
+        }
+
+        .accessibility-btn:hover svg {
+            transform: scale(1.2);
+        }
+
+        .contrast-mode {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode body::before {
+            display: none;
+        }
+
+        .contrast-mode .navbar,
+        .contrast-mode .footer,
+        .contrast-mode .accordion-item,
+        .contrast-mode .review-card,
+        .contrast-mode .mission-section,
+        .contrast-mode .video-section,
+        .contrast-mode .promo-banner {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .contrast-mode .accordion-button,
+        .contrast-mode .accordion-button:not(.collapsed) {
+            background: #222222 !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .accordion-button::after {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .about-section h1,
+        .contrast-mode .about-section p,
+        .contrast-mode .accordion-body h3,
+        .contrast-mode .accordion-body p,
+        .contrast-mode .mission-section h2,
+        .contrast-mode .mission-section p,
+        .contrast-mode .reviews-section h2,
+        .contrast-mode .review-card h4,
+        .contrast-mode .review-card p,
+        .contrast-mode .video-section h2,
+        .contrast-mode .footer-section h3,
+        .contrast-mode .footer-section p,
+        .contrast-mode .footer-section a,
+        .contrast-mode .footer-copy,
+        .contrast-mode .footer-clock,
+        .contrast-mode .footer-counter,
+        .contrast-mode .promo-banner p {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .divider {
+            background: #FFFFFF !important;
+        }
+
+        .contrast-mode .btn-primary,
+        .contrast-mode .back-to-top,
+        .contrast-mode .promo-btn {
+            background: #FFFFFF !important;
+            color: #000000 !important;
+        }
+
+        .contrast-mode .navbar-brand,
+        .contrast-mode .nav-link,
+        .contrast-mode .search-bar button span,
+        .contrast-mode .accessibility-btn svg {
+            color: #FFFFFF !important;
+            fill: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar-site {
+            background: #222222 !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar-site::placeholder {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .promo-close {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .promo-close:hover {
+            color: #DDDDDD !important;
+        }
+
+        .contrast-mode .video-container video {
+            border-color: #FFFFFF !important;
         }
 
         @media (max-width: 768px) {
@@ -415,7 +608,6 @@
                 left: 20px;
                 width: 40px;
                 height: 40px;
-                font-size: 1.2rem;
             }
 
             .accordion-body {
@@ -430,15 +622,45 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .promo-banner {
+                max-width: 150px;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            body {
+                background: #000;
+                color: #FFF;
+            }
+
+            .accordion-item,
+            .review-card {
+                background: #222;
+                border-color: #FFF;
+            }
+
+            .accordion-button,
+            .accordion-button:not(.collapsed) {
+                background: #444;
+                color: #FFF;
+            }
+
+            .mission-section,
+            .video-section {
+                background: #333;
+            }
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
         <div class="container">
             <a class="navbar-brand" href="index.html">Barbershop37</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -453,7 +675,7 @@
                         <a class="nav-link" href="services.html">Услуги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">О нас</a>
+                        <a class="nav-link active" href="#">О нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Контакты</a>
@@ -462,16 +684,28 @@
                         <a class="nav-link" href="social.html">Соцсети</a>
                     </li>
                     <li class="nav-item">
-                        <a href="sitemap.html" class="nav-link" style="color: #d4a373; text-decoration: none;">Карта сайта</a>
+                        <a class="nav-link" href="sitemap.html">Карта сайта</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cabinet.html">Личный кабинет</a>
                     </li>
                 </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInputSite" class="search-bar-site" placeholder="Поиск..." aria-label="Поиск по сайту">
+                    <button aria-label="Найти"><span>🔍</span></button>
+                </div>
+                <button class="accessibility-btn" aria-label="Переключить версию для слабовидящих">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section class="about-section">
+    <section class="about-section" role="region" aria-label="О нас">
         <h1 class="fade-in">О нас</h1>
-        <p class="fade-in">Barbershop37 — стиль и традиции в одном месте. Мы подчеркиваем вашу индивидуальность с помощью качественных стрижек и ухода. Наши мастера знают, как сделать ваш образ идеальным.</p>
+        <p class="fade-in">Barbershop37 — это место, где стиль встречается с традициями. Мы создаём образы, которые подчеркивают вашу индивидуальность, используя профессиональные техники и качественные материалы. Наша команда мастеров готова сделать ваше посещение незабываемым.</p>
         <div class="accordion fade-in" id="mastersAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -481,10 +715,10 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#mastersAccordion">
                     <div class="accordion-body">
-                        <img src="pics/master1.jpg" alt="Мастер 1">
+                        <img src="pics/master1.jpg" alt="Мастер Иван">
                         <div>
                             <h3>Иван</h3>
-                            <p>Мастер классических стрижек.</p>
+                            <p>Специалист по классическим мужским стрижкам с 10-летним опытом.</p>
                         </div>
                     </div>
                 </div>
@@ -497,10 +731,10 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mastersAccordion">
                     <div class="accordion-body">
-                        <img src="pics/master2.jpg" alt="Мастер 2">
+                        <img src="pics/master2.jpg" alt="Мастер Алексей">
                         <div>
                             <h3>Алексей</h3>
-                            <p>Специалист по бритью и укладкам.</p>
+                            <p>Эксперт по оформлению бороды и профессиональным укладкам.</p>
                         </div>
                     </div>
                 </div>
@@ -513,10 +747,10 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mastersAccordion">
                     <div class="accordion-body">
-                        <img src="pics/master3.jpg" alt="Мастер 3">
+                        <img src="pics/master3.jpg" alt="Мастер Дмитрий">
                         <div>
                             <h3>Дмитрий</h3>
-                            <p>Эксперт по детским и креативным стрижкам.</p>
+                            <p>Мастер креативных и детских стрижек, создающий комфорт для клиентов.</p>
                         </div>
                     </div>
                 </div>
@@ -524,45 +758,56 @@
         </div>
     </section>
 
-    <div class="divider"></div>
-
-    <section class="mission-section fade-in">
-        <h2>Наша миссия</h2>
-        <p>Мы стремимся сделать каждое посещение Barbershop37 незабываемым. Наша цель — не просто подстричь или побрить, а создать образ, который будет отражать вашу личность и стиль. Мы ценим традиции, но всегда идем в ногу со временем, используя современные техники и подходы.</p>
+    <section class="video-section fade-in" role="region" aria-label="Видео мастеров">
+        <h2>Наши мастера в деле</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="pics/video1.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
     </section>
 
     <div class="divider"></div>
 
-    <section class="reviews-section fade-in">
-        <h2>Что говорят наши клиенты</h2>
+    <section class="mission-section fade-in" role="region" aria-label="Миссия">
+        <h2>Наша миссия</h2>
+        <p>Мы стремимся к тому, чтобы каждый клиент чувствовал себя особенным. Наша цель — не просто стрижка или бритьё, а создание образа, который отражает вашу уникальность. Мы сочетаем классическое мастерство с современными трендами.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="reviews-section fade-in" role="region" aria-label="Отзывы клиентов">
+        <h2>Отзывы наших клиентов</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="review-card">
                     <h4>Михаил</h4>
-                    <p>Отличный барбершоп! Иван сделал идеальную стрижку, теперь я постоянный клиент. Атмосфера просто невероятная — чувствуешь себя как дома.</p>
+                    <p>Иван сделал идеальную стрижку, атмосфера в барбершопе невероятная. Теперь я постоянный клиент!</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="review-card">
                     <h4>Сергей</h4>
-                    <p>Алексей — мастер своего дела. Борода выглядит идеально, а укладка держится весь день. Спасибо за профессионализм!</p>
+                    <p>Алексей — настоящий профессионал. Борода выглядит безупречно, укладка держится весь день.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="review-card">
                     <h4>Антон</h4>
-                    <p>Привел сына к Дмитрию, результат превзошел ожидания. Ребенок доволен, а я рад, что нашел такой барбершоп. Рекомендую!</p>
+                    <p>Дмитрий отлично справился с детской стрижкой. Сын доволен, а я рад, что нашел Barbershop37!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Barbershop37</h3>
-                    <p>ул. Мневники, 21, Москва<br>
+                    <p>Профессиональные стрижки и уход за внешностью с акцентом на качество и стиль.<br>
+                    ул. Мневники, 21, Москва<br>
                     <a href="tel:+79932588075">+7 (993) 258-80-75</a><br>
                     <a href="mailto:romaveter432@gmail.com">romaveter432@gmail.com</a><br>
                     Пн-Вс, 10:00–21:00</p>
@@ -588,49 +833,111 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-clock" id="clock"></div>
+            <div class="footer-counter" id="visitorCounter">Посетителей: 0</div>
             <p class="footer-copy">© 2025 Barbershop37. Все права защищены.</p>
         </div>
     </footer>
 
     <div class="promo-banner" id="promoBanner">
-        <button class="promo-close">×</button>
-        <p>Скидка 10% на первую онлайн-запись!</p>
+        <button class="promo-close" aria-label="Закрыть баннер">×</button>
+        <p>Запишитесь сегодня и получите скидку 10% на первую услугу!</p>
         <a href="contact.html" class="promo-btn">Записаться</a>
     </div>
 
-    <div class="back-to-top" id="backToTop">
-        ↑
+    <div class="back-to-top" id="backToTop" aria-label="Вернуться вверх">
+        <img src="pics/arrow.png" alt="Вернуться вверх">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
-        // Закрытие баннера
+        // Анимация появления
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Переключение версии для слабовидящих
         document.addEventListener('DOMContentLoaded', () => {
-            const promoBanner = document.getElementById('promoBanner');
-            if (promoBanner) {
-                const promoClose = promoBanner.querySelector('.promo-close');
-                promoClose.addEventListener('click', () => {
-                    promoBanner.classList.add('hidden');
+            const accessibilityBtn = document.querySelector('.accessibility-btn');
+            if (accessibilityBtn) {
+                accessibilityBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('contrast-mode');
+                    accessibilityBtn.setAttribute('aria-label', document.body.classList.contains('contrast-mode') ? 'Переключить на обычную версию' : 'Переключить версию для слабовидящих');
                 });
             }
         });
 
-        // Показ кнопки "вверх"
+        // Кнопка "Вверх"
         const backToTop = document.getElementById('backToTop');
         const footer = document.querySelector('footer');
-
         window.addEventListener('scroll', () => {
-            const footerTop = footer.getBoundingClientRect().top;
-            if (footerTop <= window.innerHeight) {
+            const footerPosition = footer.getBoundingClientRect().top;
+            if (footerPosition <= window.innerHeight) {
                 backToTop.classList.add('show');
             } else {
                 backToTop.classList.remove('show');
             }
         });
-
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Часы
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const date = now.toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' });
+            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}, ${date}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Счетчик посетителей
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCounter').textContent = `Посетителей: ${visitorCount}`;
+
+        // Промо-баннер
+        const promoBanner = document.getElementById('promoBanner');
+        const promoClose = document.querySelector('.promo-close');
+        if (promoClose) {
+            promoClose.addEventListener('click', () => {
+                promoBanner.classList.add('hidden');
+            });
+        }
+
+        // Поиск по сайту
+        const searchInputSite = document.getElementById('searchInputSite');
+        if (searchInputSite) {
+            searchInputSite.addEventListener('input', function(e) {
+                e.preventDefault();
+                const query = this.value.toLowerCase().trim();
+                const sections = document.querySelectorAll('section, footer');
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(query) || !query) {
+                        section.style.display = '';
+                        section.classList.remove('hidden-section');
+                    } else {
+                        section.style.display = 'none';
+                        section.classList.add('hidden-section');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

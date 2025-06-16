@@ -442,14 +442,12 @@
             bottom: 120px;
             left: 30px;
             background: #D4AF37;
-            color: #000;
             width: 50px;
             height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
@@ -466,13 +464,176 @@
             background: #E0E0E0;
         }
 
+        .back-to-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .search-bar {
+            position: relative;
+            max-width: 300px;
+            margin-left: 1rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem 2rem 0.5rem 0.5rem;
+            border-radius: 5px;
+            border: 2px solid #D4AF37;
+            background: rgba(255, 255, 255, 0.1);
+            color: #E0E0E0;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #D4AF37;
+            font-size: 1.2rem;
+        }
+
+        .search-bar-site {
+            padding: 0.5rem;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #E0E0E0;
+            width: 150px;
+            margin-left: 1rem;
+        }
+
+        .search-bar-site::placeholder {
+            color: #D4AF37;
+        }
+
+        .accessibility-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .accessibility-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #D4AF37;
+            transition: transform 0.3s ease;
+        }
+
+        .accessibility-btn:hover svg {
+            transform: scale(1.2);
+        }
+
+        .contrast-mode {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode body::before {
+            display: none;
+        }
+
+        .contrast-mode .navbar,
+        .contrast-mode .footer,
+        .contrast-mode .master-card,
+        .contrast-mode .review-card,
+        .contrast-mode .feature-card,
+        .contrast-mode .pricing-table,
+        .contrast-mode .modal-content {
+            background: #000000 !important;
+            color: #FFFFFF !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .contrast-mode .pricing-table th,
+        .contrast-mode .pricing-table td,
+        .contrast-mode .pricing-table .price-value {
+            color: #FFFFFF !important;
+            background: #000000 !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .contrast-mode .pricing-table tr:hover {
+            background-color: #222222 !important;
+        }
+
+        .contrast-mode .btn-primary,
+        .contrast-mode .back-to-top {
+            background: #FFFFFF !important;
+            color: #000000 !important;
+        }
+
+        .contrast-mode .navbar-brand,
+        .contrast-mode .nav-link,
+        .contrast-mode .master-name,
+        .contrast-mode .review-author,
+        .contrast-mode .review-rating i,
+        .contrast-mode .master-specialty i,
+        .contrast-mode .footer-section h3,
+        .contrast-mode .feature-card h4 {
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar input,
+        .contrast-mode .search-bar-site {
+            background: #222222 !important;
+            border-color: #FFFFFF !important;
+            color: #FFFFFF !important;
+        }
+
+        .contrast-mode .search-bar button span,
+        .contrast-mode .accessibility-btn svg {
+            color: #FFFFFF !important;
+            fill: #FFFFFF !important;
+        }
+
+        .contrast-mode .glow-divider {
+            background: #FFFFFF !important;
+        }
+
+        .contrast-mode .glow-divider::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        .contrast-mode .review-avatar,
+        .contrast-mode .map-container {
+            border-color: #FFFFFF !important;
+        }
+
+        .video-section {
+            padding: 3rem 1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .video-section h2 {
+            font-family: 'Planet Kosmos', sans-serif;
+            color: #D4AF37;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #D4AF37;
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
             .back-to-top {
                 bottom: 100px;
                 left: 10px;
                 width: 40px;
                 height: 40px;
-                font-size: 1.2rem;
             }
 
             .carousel-item img {
@@ -603,76 +764,8 @@
             font-size: 0.9rem;
         }
 
-        .promo-banner {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #D4AF37;
-            color: #000;
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-            max-width: 240px;
-            z-index: 2000;
-            animation: pulse 2.5s infinite;
-            text-align: center;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        .promo-banner.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .promo-banner p {
-            margin: 0 0 0.75rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .promo-btn {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .promo-btn:hover {
-            background: #333;
-            transform: scale(1.05);
-        }
-
-        .promo-close {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: none;
-            border: none;
-            color: #000;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .promo-close:hover {
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .promo-banner {
-                max-width: 180px;
-                bottom: 10px;
-                right: 10px;
-            }
+        .hidden-section {
+            display: none !important;
         }
     </style>
 </head>
@@ -703,7 +796,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="sitemap.html" aria-label="Карта сайта">Карта сайта</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cabinet.html" aria-label="Личный кабинет">Личный кабинет</a>
+                    </li>
                 </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" class="search-bar-site" placeholder="Поиск..." aria-label="Поиск по сайту">
+                    <button aria-label="Найти"><span>🔍</span></button>
+                </div>
+                <button class="accessibility-btn" aria-label="Переключить версию для слабовидящих">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -745,6 +850,22 @@
         <button class="btn btn-primary gallery-button" data-bs-toggle="modal" data-bs-target="#fullScreenGallery" aria-label="Открыть полную галерею">Открыть галерею</button>
     </section>
 
+    <section class="video-section" role="region" aria-label="Видео мастеров">
+        <h2 class="fade-in">Видео мастеров</h2>
+        <div class="container">
+            <div class="video-container">
+                <video controls width="100%" height="auto">
+                    <source src="pics/video1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <video controls width="100%" height="auto">
+                    <source src="pics/video2.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+    </section>
+
     <section class="masters-section" role="region" aria-label="Наши мастера">
         <h2 class="fade-in">Наши лучшие мастера</h2>
         <div class="container">
@@ -764,7 +885,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="master-card fade-in">
-                        <img src="pics/master2.jpg" alt="Мастер Алексей" class="master-img">
+                        <img src="pics/master2.png" alt="Мастер Алексей" class="master-img">
                         <div class="master-info">
                             <h3 class="master-name">Алексей</h3>
                             <div class="master-specialty">
@@ -777,7 +898,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="master-card fade-in">
-                        <img src="pics/master3.jpg" alt="Мастер Дмитрий" class="master-img">
+                        <img src="pics/master3.png" alt="Мастер Дмитрий" class="master-img">
                         <div class="master-info">
                             <h3 class="master-name">Дмитрий</h3>
                             <div class="master-specialty">
@@ -827,7 +948,7 @@
                         </tr>
                         <tr>
                             <td>Уход за волосами</td>
-                            <td>Профессиональный уход для здоровья волос</td>
+                            <td>Профессиональный уход за для здоровья волос</td>
                             <td class="price-value">1200 ₽</td>
                         </tr>
                         <tr>
@@ -848,7 +969,7 @@
                 <div class="col-md-4">
                     <div class="review-card fade-in">
                         <div class="review-header">
-                            <img src="pics/client1.jpg" alt="Клиент Михаил" class="review-avatar">
+                            <img src="pics/client1.jpg" alt="Клиент Михаил Клиент" class="review-avatar">
                             <div>
                                 <div class="review-author">Михаил</div>
                                 <div class="review-date">15 мая 2025</div>
@@ -867,7 +988,7 @@
                 <div class="col-md-4">
                     <div class="review-card fade-in">
                         <div class="review-header">
-                            <img src="pics/client2.jpg" alt="Клиент Сергей" class="review-avatar">
+                            <img src="pics/client2.jpg" alt="Клиент Сергей Клиент" class="review-avatar">
                             <div>
                                 <div class="review-author">Сергей</div>
                                 <div class="review-date">10 мая 2025</div>
@@ -886,7 +1007,7 @@
                 <div class="col-md-4">
                     <div class="review-card fade-in">
                         <div class="review-header">
-                            <img src="pics/client3.jpg" alt="Клиент Антон" class="review-avatar">
+                            <img src="pics/client3.jpg" alt="Клиент Антон Клиент" class="review-avatar">
                             <div>
                                 <div class="review-author">Антон</div>
                                 <div class="review-date">5 мая 2025</div>
@@ -1021,18 +1142,13 @@
         </div>
     </footer>
 
-    <div class="promo-banner" id="promoBanner">
-        <button class="promo-close" aria-label="Закрыть баннер">×</button>
-        <p>Скидка 10% на первую онлайн-запись!</p>
-        <button class="promo-btn" onclick="document.getElementById('tgForm').scrollIntoView({ behavior: 'smooth' })">Записаться</button>
-    </div>
-
     <div class="back-to-top" id="backToTop" aria-label="Вернуться вверх">
-        ↑
+        <img src="pics/arrow.png" alt="Вернуться вверх">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
+        // Инициализация карусели
         const carousel = document.querySelector('#galleryCarousel');
         if (carousel) {
             const bsCarousel = new bootstrap.Carousel(carousel, {
@@ -1049,6 +1165,7 @@
             });
         }
 
+        // Анимация появления
         const fadeElements = document.querySelectorAll('.fade-in');
         const fadeInOnScroll = () => {
             fadeElements.forEach(element => {
@@ -1063,16 +1180,18 @@
         window.addEventListener('scroll', fadeInOnScroll);
         window.addEventListener('load', fadeInOnScroll);
 
+        // Переключение версии для слабовидящих
         document.addEventListener('DOMContentLoaded', () => {
-            const promoBanner = document.getElementById('promoBanner');
-            if (promoBanner) {
-                const promoClose = promoBanner.querySelector('.promo-close');
-                promoClose.addEventListener('click', () => {
-                    promoBanner.classList.add('hidden');
+            const accessibilityBtn = document.querySelector('.accessibility-btn');
+            if (accessibilityBtn) {
+                accessibilityBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('contrast-mode');
+                    accessibilityBtn.setAttribute('aria-label', document.body.classList.contains('contrast-mode') ? 'Переключить на обычную версию' : 'Переключить версию для слабовидящих');
                 });
             }
         });
 
+        // Кнопка "Вверх"
         const backToTop = document.getElementById('backToTop');
         const footer = document.querySelector('footer');
         window.addEventListener('scroll', () => {
@@ -1093,7 +1212,8 @@
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}`;
+            const date = now.toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' });
+            document.getElementById('clock').textContent = `Текущее время: ${hours}:${minutes}:${seconds}, ${date}`;
         }
         setInterval(updateClock, 1000);
         updateClock();
@@ -1103,6 +1223,25 @@
         visitorCount++;
         localStorage.setItem('visitorCount', visitorCount);
         document.getElementById('visitorCounter').textContent = `Посетителей: ${visitorCount}`;
+
+        // Клиентский поиск
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const sections = document.querySelectorAll('section, footer');
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(query) || !query) {
+                        section.style.display = '';
+                        section.classList.remove('hidden-section');
+                    } else {
+                        section.style.display = 'none';
+                        section.classList.add('hidden-section');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
